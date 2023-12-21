@@ -9,11 +9,6 @@ namespace AspProjectZust.WebUI.Controllers
             return View();
         }
 
-        public IActionResult HelpAndSupport()
-        {
-            return View();
-        }
-
         public IActionResult LiveChat()
         {
             return View();
@@ -35,11 +30,6 @@ namespace AspProjectZust.WebUI.Controllers
         }
 
         public IActionResult Notifications()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
