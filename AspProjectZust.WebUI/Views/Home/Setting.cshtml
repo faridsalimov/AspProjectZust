@@ -1,0 +1,321 @@
+﻿@model UpdateUserViewModel
+<!doctype html>
+<html lang="zxx">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Links of CSS files -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/assets/css/remixicon.css">
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="~/assets/css/simplebar.min.css">
+    <link rel="stylesheet" href="~/assets/css/metismenu.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+
+    <title>Zust - Social Community & Marketplace HTML Template</title>
+
+    <link rel="icon" type="image/png" href="~/assets/images/favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Start Preloader Area -->
+    <div class="preloader-area">
+        <div class="spinner">
+            <div class="inner">
+                <div class="disc"></div>
+                <div class="disc"></div>
+                <div class="disc"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+    <!-- Start Main Content Wrapper Area -->
+    <!-- Start Content Page Box Area -->
+    <div class="content-page-box-area">
+        <div class="page-banner-box">
+            <h3>Account Setting</h3>
+        </div>
+
+        <div class="account-setting-list-tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="profile-information-tab" data-bs-toggle="tab" href="#profile-information" role="tab" aria-controls="profile-information">Profile Information</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="account-tab" data-bs-toggle="tab" href="#account" role="tab" aria-controls="account">Account</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="profile-information" role="tabpanel">
+                <form class="account-setting-form" asp-action="UserUpdateInfo" asp-controller="Home">
+                    <h3>Profile Information</h3>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" asp-for="FirstName" class="form-control" placeholder="First name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input asp-for="LastName" type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input asp-for=Email type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Backup Email</label>
+                                <input asp-for="BackUpEmail" type="email" class="form-control" placeholder="Backup email">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input asp-for="DateOfBirth" type="text" class="form-control" placeholder="Date of birth" id="datepicker">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Phone No:</label>
+                                <input asp-for="PhoneNumber" type="number" class="form-control" placeholder="Phone no">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Occupation</label>
+                                <select asp-for="Occupation" class="form-select">
+                                    <option selected="1">Occupation</option>
+                                    <option value="2">Software Developer</option>
+                                    <option value="3">Biomedical Engineer</option>
+                                    <option value="4">Civil Engineer</option>
+                                    <option value="5">General Practitioner</option>
+                                    <option value="6">Structural Engineer</option>
+                                    <option value="7">Pharmacy Technician</option>
+                                    <option value="8">Mechanical Engineer</option>
+                                    <option value="9">Petroleum Engineer</option>
+                                    <option value="10">Technician</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select asp-for="Gender" class="form-select">
+                                    <option selected="1">Gender</option>
+                                    <option value="2">Male</option>
+                                    <option value="3">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Relation Status</label>
+                                <select asp-for="RelationStatus" class="form-select">
+                                    <option selected="1">Relation Status</option>
+                                    <option value="2">Married</option>
+                                    <option value="3">Unmarried</option>
+                                    <option value="4">Single</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Blood Group</label>
+                                <select asp-for="BloodGroup" class="form-select">
+                                    <option selected="1">Blood Group</option>
+                                    <option value="2">A+</option>
+                                    <option value="3">A-</option>
+                                    <option value="4">B+</option>
+                                    <option value="5">B-</option>
+                                    <option value="6">O+</option>
+                                    <option value="7">O-</option>
+                                    <option value="8">AB+</option>
+                                    <option value="9">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Language</label>
+                                <select asp-for="Language" class="form-select">
+                                    <option selected="1">Language</option>
+                                    <option value="2">English</option>
+                                    <option value="3">Portuguese</option>
+                                    <option value="4">Japanese</option>
+                                    <option value="5">Russian</option>
+                                    <option value="6">Javanese</option>
+                                    <option value="7">Gujarati</option>
+                                    <option value="8">Yoruba</option>
+                                    <option value="9">Polish</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input asp-for="Address" type="text" class="form-control" placeholder="Address">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>City</label>
+                                <select asp-for="City" class="form-select">
+                                    <option selected="1">City</option>
+                                    <option value="2">Canada</option>
+                                    <option value="3">Germany</option>
+                                    <option value="4">Switzerland</option>
+                                    <option value="5">Australia</option>
+                                    <option value="6">United States</option>
+                                    <option value="7">New Zealand</option>
+                                    <option value="8">United Kingdom</option>
+                                    <option value="9">Netherlands</option>
+                                </select>
+                            </div>
+                        </div>                     
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <select asp-for="Country" class="form-select">
+                                    <option selected="1">Country</option>
+                                    <option value="2">Canada</option>
+                                    <option value="3">Germany</option>
+                                    <option value="4">Switzerland</option>
+                                    <option value="5">Australia</option>
+                                    <option value="6">United States</option>
+                                    <option value="7">New Zealand</option>
+                                    <option value="8">United Kingdom</option>
+                                    <option value="9">Netherlands</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="default-btn">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="account" role="tabpanel">
+                <form class="account-setting-form">
+                    <h3>Account Information</h3>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" placeholder="Full name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>User Name</label>
+                                <input type="text" class="form-control" placeholder="User name">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Account Email</label>
+                                <input type="email" class="form-control" placeholder="Account email">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="number" class="form-control" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <select class="form-select">
+                                    <option selected="1">Country</option>
+                                    <option value="2">Canada</option>
+                                    <option value="3">Germany</option>
+                                    <option value="4">Switzerland</option>
+                                    <option value="5">Australia</option>
+                                    <option value="6">United States</option>
+                                    <option value="7">New Zealand</option>
+                                    <option value="8">United Kingdom</option>
+                                    <option value="9">Netherlands</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="default-btn">Save</button>
+                        </div>
+                    </div>
+                </form>
+
+                <form class="account-setting-form">
+                    <h3>Change Password</h3>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Current Password</label>
+                                <input type="password" class="form-control" placeholder="Current password">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>New Password</label>
+                                <input type="password" class="form-control" placeholder="New password">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Change Password</label>
+                                <input type="password" class="form-control" placeholder="Change password">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="default-btn">Save Change</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Content Page Box Area -->
+    <!-- End Main Content Wrapper Area -->
+    <!-- Start Go Top Area -->
+    <div class="go-top">
+        <i class="ri-arrow-up-line"></i>
+    </div>
+    <!-- End Go Top Area -->
+
+    <script src="~/assets/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/jquery-ui.min.js"></script>
+    <script src="~/assets/js/simplebar.min.js"></script>
+    <script src="~/assets/js/metismenu.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/wow.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
+
+    <script src="~/assets/js/site.js"></script>
+    <script src="~/assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/js/user.js"></script>
+</body>
+</html>

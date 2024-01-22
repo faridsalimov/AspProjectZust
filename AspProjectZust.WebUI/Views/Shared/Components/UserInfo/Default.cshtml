@@ -1,0 +1,133 @@
+﻿@model UserInfoViewModel
+<div class="main-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a asp-action="NewsFeed" asp-controller="Home" class="navbar-brand d-flex align-items-center">
+            <img src="~/assets/images/logo.png" alt="image">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-burger-menu m-auto">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+            </div>
+
+            <div class="search-box m-auto">
+                <form>
+                    <input type="text" class="input-search" placeholder="Search...">
+                    <button type="submit"><i class="ri-search-line"></i></button>
+                </form>
+            </div>
+
+            <div class="others-options d-flex align-items-center">
+                <div class="option-item">
+                    <a asp-action="NewsFeed" asp-controller="Home" class="home-btn"><i class="flaticon-home"></i></a>
+                </div>
+                <div class="option-item">
+                    <div class="dropdown friend-requests-nav-item">
+                        <a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="friend-requests-btn">
+                                <i class="flaticon-user"></i>
+                                <span id="userRequestCount"></span>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="friend-requests-header d-flex justify-content-between align-items-center">
+                                <h3>Friend Requests</h3>
+                                <i class="flaticon-menu"></i>
+                            </div>
+
+                            <div id="requests" class="friend-requests-body" data-simplebar>
+                                <div class="view-all-requests-btn">
+                                    <a href="friends.html" class="default-btn">View All Requests</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-item">
+                    <div class="dropdown messages-nav-item">
+                        <a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="messages-btn">
+                                <i class="flaticon-email"></i>
+                                <span>0</span>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="messages-header d-flex justify-content-between align-items-center">
+                                <h3>Messages</h3>
+                                <i class="flaticon-menu"></i>
+                            </div>
+                            <div class="messages-search-box">
+                                <form>
+                                    <input type="text" class="input-search" placeholder="Search Message...">
+                                    <button type="submit"><i class="ri-search-line"></i></button>
+                                </form>
+                            </div>
+                            <div class="messages-body" data-simplebar>
+                                <div class="view-all-messages-btn">
+                                    <a asp-action="Messages" asp-controller="Home" class="default-btn">View All Messages</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-item">
+                    <div class="dropdown notifications-nav-item">
+                        <a href="#" onclick="NotificationClick()" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="notifications-btn">
+                                <i class="flaticon-bell"></i>
+                                <span id="notificationCount"></span>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="notifications-header d-flex justify-content-between align-items-center">
+                                <h3>Notifications</h3>
+                                <i class="flaticon-menu"></i>
+                            </div>
+                            <div class="notifications-body" id="notifications" data-simplebar>
+
+                                <div class="view-all-notifications-btn">
+                                    <a asp-action="Notifications" asp-controller="Home" class="default-btn">View All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-item">
+                    <div class="dropdown profile-nav-item">
+                        <a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="menu-profile">
+                                <img src="~/assets/images/user/@Model.ImageUrl" class="rounded-circle" alt="image">
+                                <span class="name">@Model.UserName</span>
+                                <span class="status-online"></span>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="profile-header">
+                                <h3>@Model.UserName</h3>
+                                <a href=`mailto:${@Model.Email}`>@Model.Email</a>
+                            </div>
+                            <ul class="profile-body">
+                                <li><i class="flaticon-user"></i> <a asp-action="MyProfile" asp-controller="Home">My Profile</a></li>
+                                <li><i class="flaticon-settings"></i> <a asp-action="Setting" asp-controller="Home">Setting</a></li>
+                                <li><i class="flaticon-privacy"></i> <a asp-action="Privacy" asp-controller="Home">Privacy</a></li>
+                                <li><i class="flaticon-information"></i> <a asp-action="HelpAndSupport" asp-controller="Home">Help & Support</a></li>
+                                <li><i class="flaticon-logout"></i> <a asp-action="Login" asp-controller="Account">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+

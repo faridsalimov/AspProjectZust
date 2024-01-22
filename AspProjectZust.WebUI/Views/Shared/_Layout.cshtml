@@ -1,0 +1,139 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AspProjectZust.WebUI</title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/assets/css/remixicon.css">
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="~/assets/css/simplebar.min.css">
+    <link rel="stylesheet" href="~/assets/css/metismenu.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+
+    <link rel="stylesheet" href="~/AspProjectZust.WebUI.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/png" href="~/assets/images/favicon.png">
+
+</head>
+<body>
+
+    <div class="main-content-wrapper d-flex flex-column">
+        <div class="navbar-area">
+            <div class="main-responsive-nav">
+                <div class="main-responsive-menu">
+                    <div class="responsive-burger-menu d-lg-none d-block">
+                        <span class="top-bar"></span>
+                        <span class="middle-bar"></span>
+                        <span class="bottom-bar"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            @await Component.InvokeAsync("UserInfo")
+
+
+        </div>
+        <div class="sidemenu-area">
+            <div class="responsive-burger-menu d-lg-none d-block">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+            </div>
+
+            <div class="sidemenu-body">
+                <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+                    <li class="nav-item active">
+                        <a asp-action="NewsFeed" asp-controller="Home" class="nav-link">
+                            <span class="icon"><i class="flaticon-newspaper"></i></span>
+                            <span class="menu-title">News Feed</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Notifications" asp-controller="Home" class="nav-link">
+                            <span class="icon"><i class="flaticon-bell"></i></span>
+                            <span class="menu-title">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Messages" asp-controller="Home" class="nav-link">
+                            <span class="icon"><i class="flaticon-comment-1"></i></span>
+                            <span class="menu-title">Messages</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Friends" asp-controller="Home" class="nav-link">
+                            <span class="icon"><i class="flaticon-friends"></i></span>
+                            <span class="menu-title">Friends</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Login" asp-controller="Account" class="nav-link">
+                            <span class="icon"><i class="flaticon-user"></i></span>
+                            <span class="menu-title">Login</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Register" asp-controller="Account" class="nav-link">
+                            <span class="icon"><i class="flaticon-information"></i></span>
+                            <span class="menu-title">Register</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        @RenderBody()
+        <!-- Start Right Sidebar Area -->
+        <div class="right-sidebar-area">
+
+            <div class="recent-contact-box">
+                <div class="title">
+                    <h3>Contact</h3>
+                </div>
+                <div class="contact-search-box">
+                    <form>
+                        <input type="text" class="input-search" placeholder="Search">
+                        <button type="submit"><i class="ri-search-line"></i></button>
+                    </form>
+                </div>
+                <div class="contact-body" id="onlineUsers" data-simplebar>
+                </div>
+            </div>
+        </div>
+        <!-- End Right Sidebar Area -->
+    </div>
+
+
+    @*     <div class="go-top">
+    <i class="ri-arrow-up-line"></i>
+    </div> *@
+
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/jquery-ui.min.js"></script>
+    <script src="~/assets/js/simplebar.min.js"></script>
+    <script src="~/assets/js/metismenu.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/wow.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
+
+    <script src="~/assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/lib/jquery/dist/jquery.min.js"></script>
+
+
+    @*<script src="~/assets/js/signalr/dist/browser/signalr.js"></script>*@
+    @*<script src="~/assets/js/site.js"></script>*@
+    <script src="~/assets/js/user.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
