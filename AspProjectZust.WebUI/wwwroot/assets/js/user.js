@@ -490,11 +490,11 @@ async function GetAllPosts() {
                     <div class="news-feed news-feed-post">
                         <div class="post-header d-flex justify-content-between align-items-center">
                             <div class="image">
-                                <a href="my-profile.html"><img src="assets/images/user/${data[i].user.imageUrl}" class="rounded-circle" alt="image"></a>
+                                <a><img src="assets/images/user/${data[i].user.imageUrl}" class="rounded-circle" alt="image"></a>
                             </div>
                             <div class="info ms-3">
-                                <span class="name"><a href="my-profile.html">${data[i].user.userName}</a></span>
-                                <span class="small-text"><a href="#">${data[i].publishTime}</a></span>
+                                <span class="name"><a>${data[i].user.userName}</a></span>
+                                <span class="small-text"><a>${data[i].publishTime}</a></span>
                             </div>
                         </div>
 
